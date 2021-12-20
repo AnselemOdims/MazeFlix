@@ -28,6 +28,7 @@
 /* Global styles */
 html {
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
@@ -35,6 +36,7 @@ body {
   font-family: var(--font-1);
   background: var(--neutral-color-1);
   position: relative;
+  height: 100%;
 }
 
 ul li {
@@ -88,6 +90,16 @@ nav ul li a.active {
 
 .d-none {
   display: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5%;
+  background-color: var(--secondary-color-3);
+  color: var(--neutral-color-1);
+  border-radius: 10% 10% 0 0;
 }
 
 @media (max-width: 992px) {

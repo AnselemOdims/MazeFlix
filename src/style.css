@@ -60,7 +60,7 @@ header > nav {
 
 nav > .logo img {
   width: 30%;
-  margin: 0 10px;
+  padding: 20px 0;
 }
 
 nav > ul {
@@ -81,7 +81,18 @@ nav > ul > li a:hover {
 
 nav ul li a.active {
   color: var(--secondary-color-3);
-  border-bottom: solid 2px var(--secondary-color-3);
+  border-bottom: solid 3px var(--secondary-color-3);
   transition: border-bottom ease-out 0.5s 0.1s;
-  padding-bottom: 3px;
+  padding-bottom: 5px;
+}
+
+@media (max-width: 992px){
+  header > nav {
+    padding: 0 50px;
+  }
+
+  nav > .logo img {
+    width: 60%;
+    padding: 20px 0;
+  }
 }

@@ -1,7 +1,99 @@
-h1 {
-  color: red;
+/* Google font import */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-img {
-  width: 100px;
+/* Variables */
+:root {
+  --primary-color-1: #f85f68;
+  --primary-color-2: #f5303d;
+  --primary-color-3: #f3a0a6;
+  --accent-color-1: #77b1ad;
+  --accent-color-2: #b5ebe7;
+  --accent-color-3: #2f4b49;
+  --secondary-color-1: #322831;
+  --secondary-color-2: #5f4d5d;
+  --secondary-color-3: #bb70b3;
+  --neutral-color-1: #dfdfde;
+  --white: #fff;
+  --font-1: 'Lora', sans-serif;
+  --font-2: 'Sora', serif;
+}
+
+/* Global styles */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--font-1);
+  background: var(--neutral-color-1);
+  position: relative;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Header Styles */
+header {
+  width: 100%;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 200px;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  width: 25%;
+  margin: 0 10px;
+}
+
+footer p {
+  font-size: 10px;
+  color: #6b6a6a;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+.contact-details ul li a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #6070ff;
+}
+
+nav ul li a.active {
+  color: #6070ff;
+  border-bottom: solid 2px #6070ff;
+  transition: border-bottom ease-out 0.5s 0.1s;
+  padding-bottom: 3px;
 }

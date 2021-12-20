@@ -20,7 +20,10 @@
 	},
 	"homepage": "https://github.com/AnselemOdims/Webpack-BoilerPlate#readme",
 	"devDependencies": {
+		"@babel/core": "^7.16.5",
+		"@babel/preset-env": "^7.16.5",
 		"babel-eslint": "^10.1.0",
+		"babel-jest": "^27.4.5",
 		"css-loader": "^6.5.1",
 		"eslint": "^7.32.0",
 		"eslint-config-airbnb-base": "^14.2.1",

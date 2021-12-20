@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: "12.x"
       - name: Setup Lighthouse
-        run: npm install -g @lhci/cli@0.7.x
+        run: npm install -g @lhci/cli
       - name: Lighthouse Report
         run: lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=./dist
   webhint:

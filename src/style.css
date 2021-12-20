@@ -86,7 +86,7 @@ nav ul li a.active {
   padding-bottom: 5px;
 }
 
-@media (max-width: 992px){
+@media (max-width: 992px) {
   header > nav {
     padding: 0 50px;
   }

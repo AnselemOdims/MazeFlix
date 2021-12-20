@@ -1,7 +1,9 @@
-const Header = () => `
+import Logo from './assets/images/mAZEFLIX.gif';
+
+const Nav = () => `
   <nav>
     <div class="logo">
-        <img src="book-reader-solid.svg" alt="site logo" />
+        <img src=${Logo} alt="site logo" />
         <p>Awesome Books</p>
       </div>
       <ul>
@@ -15,3 +17,5 @@ const Header = () => `
       </ul>
   </nav>
   `;
+
+export default Nav;

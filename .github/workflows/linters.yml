@@ -17,7 +17,7 @@ jobs:
       - name: Setup Lighthouse
         run: npm install -g @lhci/cli@0.7.x
       - name: Lighthouse Report
-        run: lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=.
+        run: lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=./dist
   webhint:
     name: Webhint
     runs-on: ubuntu-18.04

@@ -13,7 +13,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack Boilerplate',
+      title: 'MazeFlix',
+      template: './src/index.html',
     }),
   ],
   output: {

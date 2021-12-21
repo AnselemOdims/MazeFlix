@@ -2,6 +2,7 @@
 import Utils from './utils.js';
 import FetchWrapper from './fetchWrapper.js';
 import { List, Heading } from './components.js';
+import Likes from './likes.js';
 
 /**
  * @class Helper - the helper class
@@ -29,6 +30,9 @@ export default class Helper {
       const result = await Helper.getHandler(input);
       Utils.renderHeading(input, Heading, Utils.getCount(result));
       Utils.render(result, List);
+      document.querySelectorAll('#likes-btn').forEach((btn) => {
+        btn.addEventListener('click', Helper.LikeHandler);
+      });
     } catch (err) {
       throw new Error(err);
     }
@@ -47,5 +51,18 @@ export default class Helper {
     } catch (err) {
       throw new Error(err);
     }
+  }
+
+  /**
+   * @static method
+   * @param {Event Object} e - the event Object
+   * @memberof Helper
+   */
+  static async LikeHandler(e) {
+    const target = e.currentTarget;
+    const data = target.dataset;
+    const elem = target.nextElementSibling;
+    await Likes.postLikes(data);
+    Likes.updateLikes(data, elem);
   }
 }

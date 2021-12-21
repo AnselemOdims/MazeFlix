@@ -1,3 +1,4 @@
+import Likes from './likes.js';
 /**
  * @class Utils - the utility class to hold all utiltity functionality
  */
@@ -9,7 +10,10 @@ export default class Utils {
    * @param {Array} data - the array response from the server
    */
   static render(data = [], list) {
-    document.querySelector('#lists-container').innerHTML = data.map((result) => list(result))
+  
+    document.querySelector('#lists-container').innerHTML = data.map((result) => {
+      return list(result);
+    })
       .join('');
   }
 
@@ -39,4 +43,5 @@ export default class Utils {
   static getCount(data) {
     return data.length;
   }
+
 }

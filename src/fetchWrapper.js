@@ -30,6 +30,6 @@ export default class FetchWrapper {
       },
       body: JSON.stringify(data),
     });
-    return response.json();
+    return response.ok;
   }
 }

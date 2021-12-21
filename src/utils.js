@@ -6,6 +6,8 @@ import FetchWrapper from './fetchWrapper.js';
 export default class Utils {
   #tvAPI = new FetchWrapper('https://api.tvmaze.com/search/shows?q=a');
 
+  #search = document.querySelector('#search');
+
   /**
    * @function render - handles the rendering of the server response on the DOM
    * @param {Array} data - the array response from the server
@@ -34,5 +36,12 @@ export default class Utils {
   static stopLoader(elem1, elem2, value) {
     elem2.classList.remove('loading-spinner');
     elem1.innerHTML = value;
+  }
+
+  /**
+   * @function clearFields - handles clearing the input after submit
+   */
+  static clearFields() {
+    this.#search.value = '';
   }
 }

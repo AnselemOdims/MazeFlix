@@ -7,7 +7,7 @@ export const Nav = ({ num = 6 } = {}) => `
     </div>
     <div class="form-container">
       <form>
-        <input type="search" placeholder="search"/>
+        <input type="search" placeholder="search" id="search"/>
         <div>
           <button type="submit">Search</button>
         </div>

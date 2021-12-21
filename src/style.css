@@ -274,6 +274,8 @@ footer {
 /* Pop Up Section */
 .section {
   height: 100%;
+  width: 100%;
+  display: none;
   position: fixed;
   z-index: 5;
   left: 0;
@@ -301,7 +303,7 @@ footer {
 
 .top-section {
   display: flex;
-  height: 60%;
+  min-height: 60%;
 }
 
 .img-section {

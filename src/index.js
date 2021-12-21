@@ -22,6 +22,7 @@ setTimeout(() => {
       Helper.getInfo(args)
         .then((data) => {
           const divs = document.querySelector('.section');
+          divs.style.display = 'block';
           divs.innerHTML = `
         <div class="top-section">
           <span class="close">&times;</span>
@@ -58,6 +59,7 @@ setTimeout(() => {
           const space = document.querySelector('.comment-display');
 
           span.addEventListener('click', () => {
+            divs.style.display = 'none';
             divs.innerHTML = '';
           });
 

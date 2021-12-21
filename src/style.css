@@ -13,9 +13,9 @@
   --primary-color-1: #f85f68;
   --primary-color-2: #f5303d;
   --primary-color-3: #f3a0a6;
-  --accent-color-1: #77b1ad;
+  --accent-color-1: #6eafab;
   --accent-color-2: #b5ebe7;
-  --accent-color-3: #2f4b49;
+  --accent-color-3: #567a79;
   --secondary-color-1: #322831;
   --secondary-color-2: #5f4d5d;
   --secondary-color-3: #2a377f;
@@ -92,11 +92,65 @@ nav ul li a.active {
   display: none;
 }
 
+/* Main Section */
+main {
+  padding: 0 200px;
+}
+
+main > ul.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+ul.container > li {
+  background: var(--white);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+}
+
+ul.container > li .tv-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.container > li .tv-title p {
+  font-size: 0.9rem;
+}
+
+ul.container > li .tv-title p:nth-of-type(1) {
+  width: 70%;
+}
+
+ul.container > li button {
+  margin: 30px 0 0;
+  background: var(--accent-color-1);
+  border: none;
+  color: var(--white);
+  font-family: var(--font-2);
+  font-size: 1rem;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+  transition: background ease-out 0.5s 0.1s;
+  cursor: pointer;
+  padding: 12px;
+}
+
+ul.container > li button:hover {
+  background: var(--accent-color-3);
+  box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
+}
+
+/* Footer Section */
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 1.5%;
+  padding: 1.5% 200px;
   background-color: var(--accent-color-1);
   color: var(--neutral-color-1);
   border-radius: 10% 10% 0 0;

@@ -150,7 +150,7 @@ nav ul li a.active {
 
 /* Main Section */
 main {
-  padding: 0 200px;
+  padding: 50px 200px 0;
 }
 
 main > ul.container {
@@ -175,11 +175,32 @@ ul.container > li .tv-title {
 }
 
 ul.container > li .tv-title p {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  color: var(--secondary-color-3);
 }
 
 ul.container > li .tv-title p:nth-of-type(1) {
   width: 70%;
+  font-weight: 700;
+}
+
+ul.container > li .tv-title p:nth-of-type(2) {
+  font-size: 0.9rem;
+}
+
+ul.container > li .tv-title p:nth-of-type(2) i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+ul.container > li .tv-title p:nth-of-type(2) i:hover {
+  color: var(--accent-color-3);
+}
+
+ul.container > li .show-img img {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 ul.container > li button {

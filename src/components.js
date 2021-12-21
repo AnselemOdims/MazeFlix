@@ -1,6 +1,6 @@
 import Logo from './assets/images/mAZEFLIX.gif';
 
-export const Nav = ({ num = 6 } = {}) => `
+export const Nav = () => `
   <nav>
     <div class="logo">
       <img src=${Logo} alt="site logo" />
@@ -15,7 +15,7 @@ export const Nav = ({ num = 6 } = {}) => `
     </div>
     <ul>
       <li>
-        <a href="#" class="links active" data-content="#books">TV Shows(${num})</a>
+        <a href="#" class="links active" data-content="#books">TV Shows</a>
       </li>
     </ul>
   </nav>
@@ -23,7 +23,7 @@ export const Nav = ({ num = 6 } = {}) => `
 
 export const List = ({ show } = {}) => `
   <li>
-    <div>
+    <div class="show-img">
       <img src=${show.image.medium} alt="show image">
     </div>
     <div class="tv-title">
@@ -32,4 +32,8 @@ export const List = ({ show } = {}) => `
     </div>
     <button type="button" class="btn comment-btn" data-id=${show.id}>Comments</button>
   </li>
+`;
+
+export const Heading = (type) => `
+  <h1>Category ${type}: TV Shows</h1>
 `;

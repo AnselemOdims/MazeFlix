@@ -9,7 +9,7 @@ export const Nav = () => `
       <form>
         <input type="search" placeholder="search" id="search"/>
         <div>
-          <button type="submit">Search</button>
+          <button type="submit" id="submit-btn">Search</button>
         </div>
       </form>
     </div>
@@ -34,6 +34,6 @@ export const List = ({ show } = {}) => `
   </li>
 `;
 
-export const Heading = (type) => `
-  <h1>Category ${type}: TV Shows</h1>
+export const Heading = (type, count = 10) => `
+  <h1>Category ${type}: TV Shows(${count})</h1>
 `;

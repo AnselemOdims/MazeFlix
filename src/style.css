@@ -20,6 +20,7 @@
   --secondary-color-1: #322831;
   --secondary-color-2: #5f4d5d;
   --secondary-color-3: #2a377f;
+  --secondary-color-4: #1e2344;
   --neutral-color-1: #dfdfde;
   --white: #fff;
   --font-1: 'Lora', sans-serif;
@@ -106,6 +107,10 @@ nav div.form-container > form > div button:hover {
   background: var(--primary-color-2);
 }
 
+nav div.form-container > form > div button:focus {
+  border: none;
+}
+
 nav .form-container > form > input {
   border: none;
   padding: 10px;
@@ -153,7 +158,7 @@ main {
   padding: 0 200px;
 }
 
-main > h1 {
+main .heading-container h1 {
   text-align: center;
   margin: 30px 0 40px;
   color: var(--secondary-color-3);
@@ -201,7 +206,7 @@ ul.container > li .tv-title p:nth-of-type(2) i {
 }
 
 ul.container > li .tv-title p:nth-of-type(2) i:hover {
-  color: var(--accent-color-3);
+  color: var(--secondary-color-4);
 }
 
 ul.container > li .show-img img {

@@ -7,15 +7,17 @@ import { List, Heading } from './components.js';
  * @class Helper - the helper class
  */
 export default class Helper {
-  #tvAPI = new FetchWrapper('https://api.tvmaze.com/');
+  static #tvAPI = new FetchWrapper('https://api.tvmaze.com/');
+
+  static #submitBtn = document.querySelector('#submit-btn');
 
   /**
    * @method getHandler - handles the refresh button click event
    * @param {Event Object} e - the event object
    * @memberof Helper
    */
-  async getHandler(input) {
-    const result = await this.#tvAPI.get(`search/shows?q=${input}`);
+  static async getHandler(input) {
+    const result = await Helper.#tvAPI.get(`search/shows?q=${input}`);
     return result;
   }
 
@@ -24,9 +26,28 @@ export default class Helper {
    * @param {String} input - the search input
    * @memberof Helper
    */
-  async display(input) {
-    const result = await this.getHandler(input);
-    Utils.renderHeading(input, Heading);
-    Utils.render(result, List);
+  static async displayData(input) {
+    try {
+      const result = await Helper.getHandler(input);
+      Utils.renderHeading(input, Heading, result.length);
+      Utils.render(result, List);
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
+
+  /**
+   * @instance method - handles the search event
+   * @param {Event Object} e - the event object
+   * @memberof Helper
+   */
+  searchHandler(e) {
+    e.preventDefault();
+    const value = document.querySelector('#search').value.trim();
+    try {
+      Helper.displayData(value);
+    } catch (err) {
+      throw new Error(err);
+    }
   }
 }

@@ -2,7 +2,7 @@
  * @class Utils - the utility class to hold all utiltity functionality
  */
 export default class Utils {
-  #search = document.querySelector('#search');
+  static #search = document.querySelector('#search');
 
   /**
    * @function render - handles the rendering of the server response on the DOM
@@ -38,7 +38,7 @@ export default class Utils {
    * @function clearFields - handles clearing the input after submit
    */
   static clearFields() {
-    this.#search.value = '';
+    Utils.#search.value = '';
   }
 
   /**
@@ -47,7 +47,7 @@ export default class Utils {
    * @param {Function} heading - returns the heading component
    * @memberof Utils
    */
-  static renderHeading(type, heading) {
-    document.querySelector('main').insertAdjacentHTML('afterbegin', heading(type.toUpperCase()));
+  static renderHeading(type, heading, len) {
+    document.querySelector('.heading-container').innerHTML = heading(type.toUpperCase(), len);
   }
 }

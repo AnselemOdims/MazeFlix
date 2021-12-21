@@ -6,4 +6,6 @@ const helper = new Helper();
 
 document.querySelector('header').innerHTML = Nav();
 
-helper.display('a');
+Helper.displayData('a');
+
+document.querySelector('form').addEventListener('submit', helper.searchHandler);

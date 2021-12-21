@@ -19,7 +19,6 @@ document.querySelector('form').addEventListener('submit', helper.searchHandler);
 const icons = new Image();
 icons.src = Icon;
 
-
 window.addEventListener('DOMContentLoaded', async () => {
   document.querySelector('header').innerHTML = Nav();
   await Helper.displayData('a');

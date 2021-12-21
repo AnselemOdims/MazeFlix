@@ -24,4 +24,15 @@ export default class Utils {
     elem2.classList.add('loading-spinner');
     elem1.innerHTML = 'Loading';
   }
+
+  /**
+   * @function stopLoader - handles the stop of the spinner loading
+   * @param {HTMLElement} elem1 - the first HTMLElement
+   * @param {HTMLElement} elem2 - the second HTMLElement
+   * @param {String} value - the string value to insert into the DOM
+   */
+  static stopLoader(elem1, elem2, value) {
+    elem2.classList.remove('loading-spinner');
+    elem1.innerHTML = value;
+  }
 }

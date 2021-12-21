@@ -29,10 +29,7 @@ export default class Helper {
     try {
       const result = await Helper.getHandler(input);
       Utils.renderHeading(input, Heading, Utils.getCount(result));
-      Utils.render(result, List);
-      document.querySelectorAll('#likes-btn').forEach((btn) => {
-        btn.addEventListener('click', Helper.LikeHandler);
-      });
+      await Utils.render(result, List);
     } catch (err) {
       throw new Error(err);
     }
@@ -43,11 +40,13 @@ export default class Helper {
    * @param {Event Object} e - the event object
    * @memberof Helper
    */
-  async searchHandler(e) {
+  async searchHandler(e, handle) {
     e.preventDefault();
     const value = document.querySelector('#search').value.trim();
     try {
       await Helper.displayData(value);
+      handle();
+      await Utils.populate();
     } catch (err) {
       throw new Error(err);
     }

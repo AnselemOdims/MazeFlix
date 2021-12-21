@@ -6,7 +6,7 @@ import FetchWrapper from './fetchWrapper.js';
 export default class Likes {
   static #API = new FetchWrapper('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/');
 
-  static #appID = 'bPBKRZKblKYzssiYo25l';
+  static #appID = 'rd64xKOPXxGFmPrj8pUt';
 
   /**
    * @instance method
@@ -19,7 +19,7 @@ export default class Likes {
       item_id: id,
     };
     const response = await Likes.#API.post(`apps/${Likes.#appID}/likes/`, data);
-    console.log(response)
+    return response;
   }
 
   /**
@@ -40,7 +40,7 @@ export default class Likes {
    */
   static async getLikesOne(id) {
     const result = await Likes.getLikesAll();
-    const { likes } = result.find((item) => item.item_id === id);
+    const { likes } = await result.find((item) => item.item_id === id) ?? { likes: 0 };
     return likes;
   }
 

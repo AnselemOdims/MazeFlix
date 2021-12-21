@@ -9,12 +9,11 @@ export default class Utils {
    * @function render - handles the rendering of the server response on the DOM
    * @param {Array} data - the array response from the server
    */
-  static render(data = [], list) {
-  
+  static async render(data = [], list) {
     document.querySelector('#lists-container').innerHTML = data.map((result) => {
-      return list(result);
-    })
-      .join('');
+      const res = list(result);
+      return res;
+    }).join('');
   }
 
   /**
@@ -44,4 +43,25 @@ export default class Utils {
     return data.length;
   }
 
+  /**
+   * @static method
+   * @returns - the array of items
+   * @memberof Utils
+   */
+  static async displayLikes() {
+    const res = await Likes.getLikesAll();
+    return res.map((item) => item);
+  }
+
+  /**
+   * @static methods
+   * @memberof Utils
+   */
+  static async populate() {
+    const likes = await Utils.displayLikes();
+    document.querySelectorAll('.likes-num').forEach((item) => {
+      const id = likes.find((data) => data.item_id === item.dataset.id);
+      item.innerHTML = id.likes;
+    });
+  }
 }

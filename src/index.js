@@ -2,7 +2,6 @@ import Icon from './assets/images/download_120262.png';
 import './style.css';
 import { Nav } from './components.js';
 import Helper from './helper.js';
-import Icon from './assets/images/download_120262.png';
 import Utils from './utils.js';
 
 const helper = new Helper();

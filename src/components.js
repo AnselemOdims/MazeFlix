@@ -5,10 +5,12 @@ const Nav = (num = 6) => `
     <div class="logo">
       <img src=${Logo} alt="site logo" />
     </div>
-    <div>
+    <div class="form-container">
       <form>
         <input type="search" placeholder="search"/>
-        <button type="submit">Search</button>
+        <div>
+          <button type="submit">Search</button>
+        </div>
       </form>
     </div>
     <ul>

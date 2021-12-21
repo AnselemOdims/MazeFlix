@@ -12,10 +12,11 @@
 :root {
   --primary-color-1: #f85f68;
   --primary-color-2: #f5303d;
-  --primary-color-3: #f3a0a6;
+  --primary-color-3: #f7c3c6;
   --accent-color-1: #6eafab;
   --accent-color-2: #b5ebe7;
   --accent-color-3: #567a79;
+  --accent-color-4: #476463;
   --secondary-color-1: #322831;
   --secondary-color-2: #5f4d5d;
   --secondary-color-3: #2a377f;
@@ -23,6 +24,7 @@
   --white: #fff;
   --font-1: 'Lora', sans-serif;
   --font-2: 'Sora', serif;
+  --shadow-1:rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
 }
 
 /* Global styles */
@@ -33,7 +35,7 @@ html {
 
 body {
   font-size: 16px;
-  font-family: var(--font-1);
+  font-family: var(--font-2);
   background: var(--neutral-color-1);
   position: relative;
   height: 100%;
@@ -57,12 +59,66 @@ header > nav {
   display: flex;
   width: 100%;
   padding: 0 200px;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+nav > .logo {
+  width: 18%;
 }
 
 nav > .logo img {
-  width: 30%;
+  width: 90%;
   padding: 20px 0;
+}
+
+nav .form-container {
+  align-self: center;
+  margin-top: 20px;
+  padding: 2px 5px 2px 2px;
+}
+
+nav .form-container > form {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--shadow-1);
+}
+
+nav .form-container > form > div {
+  background: var(--primary-color-3);
+  border-radius: 2px;
+}
+
+nav .form-container > form > div button {
+  margin: 5px 5px 5px 10px;
+  background: var(--primary-color-1);
+  border: none;
+  color: var(--white);
+  font-family: var(--font-2);
+  font-size: 0.9rem;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+  transition: background ease-out 0.5s 0.1s;
+  cursor: pointer;
+  padding: 8px 25px;
+}
+
+nav div.form-container > form > div button:hover {
+  background: var(--primary-color-2);
+}
+
+nav .form-container > form > input {
+  border: none;
+  padding: 10px;
+  border-radius: 2px;
+  font: var(--font-2);
+}
+
+nav .form-container > form > input:focus {
+  outline: none;
+}
+
+nav .form-container > form > input::placeholder {
+  font-family: var(--font-2);
 }
 
 nav > ul {
@@ -133,16 +189,20 @@ ul.container > li button {
   color: var(--white);
   font-family: var(--font-2);
   font-size: 1rem;
-  border-radius: 2px;
+  border-radius: 15% 15% 0 0;
   box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
   transition: background ease-out 0.5s 0.1s;
   cursor: pointer;
   padding: 12px;
 }
 
-ul.container > li button:hover {
+main ul.container > li button:hover {
   background: var(--accent-color-3);
   box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
+}
+
+main ul.container > li button:focus {
+  background: var(--accent-color-4);
 }
 
 /* Footer Section */

@@ -1,4 +1,4 @@
 import './style.css';
-import Nav from './components.js';
+import { Nav, List } from './components.js';
 
 document.querySelector('header').innerHTML = Nav();

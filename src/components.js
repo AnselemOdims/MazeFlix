@@ -34,6 +34,6 @@ export const List = ({ show } = {}) => `
   </li>
 `;
 
-export const Heading = (type, count = 10) => `
+export const Heading = (type, count = 5) => `
   <h1>Category ${type}: TV Shows(${count})</h1>
 `;

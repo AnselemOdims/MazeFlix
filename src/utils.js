@@ -30,7 +30,13 @@ export default class Utils {
     document.querySelector('.heading-container').innerHTML = heading(type.toUpperCase(), len);
   }
 
-  static async spinner() {
-    return document.querySelector('.spinner');
+  /**
+   * @static method
+   * @param {Array} data - the data array gotten from the server
+   * @returns {Number} the length of the Array
+   * @memberof Utils
+   */
+  static getCount(data) {
+    return data.length;
   }
 }

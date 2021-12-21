@@ -27,7 +27,7 @@ export default class Helper {
   static async displayData(input) {
     try {
       const result = await Helper.getHandler(input);
-      Utils.renderHeading(input, Heading, result.length);
+      Utils.renderHeading(input, Heading, Utils.getCount(result));
       Utils.render(result, List);
     } catch (err) {
       throw new Error(err);

@@ -150,7 +150,13 @@ nav ul li a.active {
 
 /* Main Section */
 main {
-  padding: 50px 200px 0;
+  padding: 0 200px;
+}
+
+main > h1 {
+  text-align: center;
+  margin: 30px 0 40px;
+  color: var(--secondary-color-3);
 }
 
 main > ul.container {

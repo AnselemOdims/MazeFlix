@@ -21,15 +21,15 @@ export const Nav = ({ num = 6 } = {}) => `
   </nav>
   `;
 
-export const List = ({ src, id } = {}) => `
+export const List = ({ show } = {}) => `
   <li>
     <div>
-      <img src=${src} alt="">
+      <img src=${show.image.medium} alt="show image">
     </div>
     <div class="tv-title">
-      <p>Tales my Moonlight.</p>
-      <p data-id=${id}><i class="far fa-thumbs-up"></i> 2 likes</p>
+      <p>${show.name}</p>
+      <p data-id=${show.id}><i class="far fa-thumbs-up"></i> 2 likes</p>
     </div>
-    <button type="button" class="btn comment-btn" data-id=${id}>Comments</button>
-  /li>
+    <button type="button" class="btn comment-btn" data-id=${show.id}>Comments</button>
+  </li>
 `;

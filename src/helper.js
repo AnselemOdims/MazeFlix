@@ -1,6 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import Utils from './utils.js';
 import FetchWrapper from './fetchWrapper.js';
+import { List } from './components.js';
 
 /**
  * @class Helper - the helper class
@@ -9,11 +10,22 @@ export default class Helper {
   #tvAPI = new FetchWrapper('https://api.tvmaze.com/');
 
   /**
-   * @function getHandler - handles the refresh button click event
+   * @method getHandler - handles the refresh button click event
    * @param {Event Object} e - the event object
+   * @memberof Helper
    */
-  async getHandler({ input } = {}) {
-    const { result } = await this.#tvAPI.get(`search/shows?q=${input}`);
-    return result.json();
+  async getHandler(input) {
+    const result = await this.#tvAPI.get(`search/shows?q=${input}`);
+    return result;
+  }
+
+  /**
+   * @instance method - displays the result in the DOM
+   * @param {String} input - the search input
+   * @memberof Helper
+   */
+  async display(input) {
+    const result = await this.getHandler(input);
+    Utils.render(result, List);
   }
 }

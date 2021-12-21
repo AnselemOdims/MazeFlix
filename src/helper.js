@@ -20,7 +20,7 @@ export default class Helper {
   }
 
   /**
-   * @instance method - displays the result in the DOM
+   * @static method - displays the result in the DOM
    * @param {String} input - the search input
    * @memberof Helper
    */

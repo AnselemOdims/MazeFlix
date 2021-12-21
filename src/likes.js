@@ -21,4 +21,13 @@ export default class Likes {
     const response = await Likes.#API.post(`apps/${Likes.#appID}/likes`, data);
     return response;
   }
+
+  /**
+   * @instance method
+   * @returns - the response from the server
+   */
+  async getLikes() {
+    const response = await Likes.#API.get(`apps/${Likes.#appID}/likes`);
+    return response.json();
+  }
 }

@@ -9,7 +9,7 @@ export const Nav = () => `
       <form>
         <input type="search" placeholder="search" id="search"/>
         <div>
-          <button type="submit" id="submit-btn">Search</button>
+          <button type="submit" id="submit-btn">Search <span class="spinner"></span></button>
         </div>
       </form>
     </div>

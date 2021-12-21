@@ -9,8 +9,6 @@ import { List, Heading } from './components.js';
 export default class Helper {
   static #tvAPI = new FetchWrapper('https://api.tvmaze.com/');
 
-  static #submitBtn = document.querySelector('#submit-btn');
-
   /**
    * @method getHandler - handles the refresh button click event
    * @param {Event Object} e - the event object
@@ -41,11 +39,11 @@ export default class Helper {
    * @param {Event Object} e - the event object
    * @memberof Helper
    */
-  searchHandler(e) {
+  async searchHandler(e) {
     e.preventDefault();
     const value = document.querySelector('#search').value.trim();
     try {
-      Helper.displayData(value);
+      await Helper.displayData(value);
     } catch (err) {
       throw new Error(err);
     }

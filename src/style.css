@@ -25,7 +25,7 @@
   --white: #fff;
   --font-1: 'Lora', sans-serif;
   --font-2: 'Sora', serif;
-  --shadow-1:rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+  --shadow-1: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
 }
 
 /* Global styles */
@@ -87,28 +87,6 @@ nav .form-container > form {
 nav .form-container > form > div {
   background: var(--primary-color-3);
   border-radius: 2px;
-}
-
-nav .form-container > form > div button {
-  margin: 5px 5px 5px 10px;
-  background: var(--primary-color-1);
-  border: none;
-  color: var(--white);
-  font-family: var(--font-2);
-  font-size: 0.9rem;
-  border-radius: 2px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
-  transition: background ease-out 0.5s 0.1s;
-  cursor: pointer;
-  padding: 8px 25px;
-}
-
-nav div.form-container > form > div button:hover {
-  background: var(--primary-color-2);
-}
-
-nav div.form-container > form > div button:focus {
-  border: none;
 }
 
 nav .form-container > form > input {
@@ -228,13 +206,56 @@ ul.container > li button {
   padding: 12px;
 }
 
+nav .form-container > form > div button {
+  margin: 5px 5px 5px 10px;
+  background: var(--primary-color-1);
+  border: none;
+  color: var(--white);
+  font-family: var(--font-2);
+  font-size: 0.9rem;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+  transition: background ease-out 0.5s 0.1s;
+  cursor: pointer;
+  padding: 8px 25px;
+}
+
+main ul.container > li button:focus {
+  background: var(--accent-color-4);
+}
+
 main ul.container > li button:hover {
   background: var(--accent-color-3);
   box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
 }
 
-main ul.container > li button:focus {
-  background: var(--accent-color-4);
+nav div.form-container > form > div button:hover {
+  background: var(--primary-color-2);
+}
+
+nav div.form-container > form > div button:focus {
+  outline: none;
+}
+
+/* spinner */
+.loading-spinner {
+  animation: rotate-forever linear infinite 0.8s;
+  height: 12px;
+  width: 12px;
+  border: 2px solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Footer Section */

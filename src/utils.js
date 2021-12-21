@@ -14,27 +14,6 @@ export default class Utils {
   }
 
   /**
- * @function startLoader - handles the start of the spinner loading
- * @param {HTMLElement} elem1 - the first HTMLElement
- * @param {HTMLElement} elem2 - the second HTMLElement
- */
-  static startLoader(elem1, elem2) {
-    elem2.classList.add('loading-spinner');
-    elem1.innerHTML = 'Loading';
-  }
-
-  /**
-   * @function stopLoader - handles the stop of the spinner loading
-   * @param {HTMLElement} elem1 - the first HTMLElement
-   * @param {HTMLElement} elem2 - the second HTMLElement
-   * @param {String} value - the string value to insert into the DOM
-   */
-  static stopLoader(elem1, elem2, value) {
-    elem2.classList.remove('loading-spinner');
-    elem1.innerHTML = value;
-  }
-
-  /**
    * @function clearFields - handles clearing the input after submit
    */
   static clearFields() {
@@ -49,5 +28,9 @@ export default class Utils {
    */
   static renderHeading(type, heading, len) {
     document.querySelector('.heading-container').innerHTML = heading(type.toUpperCase(), len);
+  }
+
+  static async spinner() {
+    return document.querySelector('.spinner');
   }
 }

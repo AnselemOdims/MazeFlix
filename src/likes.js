@@ -23,11 +23,34 @@ export default class Likes {
   }
 
   /**
-   * @instance method
+   * @static method
    * @returns - the response from the server
+   * @memberof Likes
    */
-  async getLikes() {
+  static async getLikesAll() {
     const response = await Likes.#API.get(`apps/${Likes.#appID}/likes`);
     return response.json();
+  }
+
+  /**
+   * @static method
+   * @param {String} param0 - the id of the item
+   * @returns - the number of likes
+   * @memberof Likes
+   */
+  static async getLikesOne({ id } = {}) {
+    const { likes } = await Likes.getLikesAll().find((item) => item.item_id === Number(id));
+    return likes;
+  }
+
+  /**
+   * @instance method
+   * @param {String} param0 - the id of the item
+   * @param {HTML Element} elem - the element to update its likes
+   * @memberof Likes
+   */
+  async updateLikes({ id } = {}, elem) {
+    const likes = await Likes.getLikesOne(id);
+    elem.innerHTML = likes;
   }
 }

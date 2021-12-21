@@ -281,7 +281,7 @@ footer {
   left: 0;
   top: 0;
   font-family: var(--font-2);
-  background: var(--accent-color-3);
+  background: var(--neutral-color-1);
   overflow: auto;
 }
 

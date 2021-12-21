@@ -21,7 +21,6 @@ export const Nav = () => `
     </ul>
   </nav>
   `;
-
 const ids = (args) => {
   let ans = '';
   for (const [key, value] of Object.entries(args)) {
@@ -32,20 +31,20 @@ const ids = (args) => {
   return ans;
 };
 
-export const List = ({ show } = {}) => `
+export const List = ({ show } = {}, likesNum = 0) => `
   <li>
     <div class="show-img">
       <img src=${show.image.medium} alt="show image">
     </div>
     <div class="tv-title">
       <p>${show.name}</p>
-      <p data-id=${show.id}><i class="far fa-thumbs-up"></i> 2 likes</p>
+      <p><i class="far fa-thumbs-up" id="likes-btn" data-id=${show.id}></i><span  data-id=${show.id} class="likes-num">${likesNum}</span> likes</p>
     </div>
     <button type="button" class="btn comment-btn" data-id=${ids(show.externals)}>Comments</button>
   </li>
 `;
 
-export const Heading = (type, count = 10) => `
+export const Heading = (type, count = 5) => `
   <h1>Category ${type}: TV Shows(${count})</h1>
 `;
 

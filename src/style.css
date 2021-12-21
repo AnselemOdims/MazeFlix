@@ -97,7 +97,7 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 1.5%;
-  background-color: var(--secondary-color-3);
+  background-color: var(--accent-color-1);
   color: var(--neutral-color-1);
   border-radius: 10% 10% 0 0;
 }

@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import Utils from './utils.js';
 import FetchWrapper from './fetchWrapper.js';
-import { List } from './components.js';
+import { List, Heading } from './components.js';
 
 /**
  * @class Helper - the helper class
@@ -26,6 +26,7 @@ export default class Helper {
    */
   async display(input) {
     const result = await this.getHandler(input);
+    Utils.renderHeading(input, Heading);
     Utils.render(result, List);
   }
 }

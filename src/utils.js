@@ -40,4 +40,14 @@ export default class Utils {
   static clearFields() {
     this.#search.value = '';
   }
+
+  /**
+   * @static method - renders the heading
+   * @param {String} type - the type of search
+   * @param {Function} heading - returns the heading component
+   * @memberof Utils
+   */
+  static renderHeading(type, heading) {
+    document.querySelector('main').insertAdjacentHTML('afterbegin', heading(type.toUpperCase()));
+  }
 }

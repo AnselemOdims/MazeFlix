@@ -1,3 +1,4 @@
+import Likes from './likes.js';
 /**
  * @class Utils - the utility class to hold all utiltity functionality
  */
@@ -8,9 +9,11 @@ export default class Utils {
    * @function render - handles the rendering of the server response on the DOM
    * @param {Array} data - the array response from the server
    */
-  static render(data = [], list) {
-    document.querySelector('#lists-container').innerHTML = data.map((result) => list(result))
-      .join('');
+  static async render(data = [], list) {
+    document.querySelector('#lists-container').innerHTML = data.map((result) => {
+      const res = list(result);
+      return res;
+    }).join('');
   }
 
   /**
@@ -30,7 +33,35 @@ export default class Utils {
     document.querySelector('.heading-container').innerHTML = heading(type.toUpperCase(), len);
   }
 
-  static async spinner() {
-    return document.querySelector('.spinner');
+  /**
+   * @static method
+   * @param {Array} data - the data array gotten from the server
+   * @returns {Number} the length of the Array
+   * @memberof Utils
+   */
+  static getCount(data) {
+    return data.length;
+  }
+
+  /**
+   * @static method
+   * @returns - the array of items
+   * @memberof Utils
+   */
+  static async displayLikes() {
+    const res = await Likes.getLikesAll();
+    return res.map((item) => item);
+  }
+
+  /**
+   * @static methods
+   * @memberof Utils
+   */
+  static async populate() {
+    const likes = await Utils.displayLikes();
+    document.querySelectorAll('.likes-num').forEach((item) => {
+      const id = likes.find((data) => data.item_id === item.dataset.id);
+      item.innerHTML = id.likes;
+    });
   }
 }

@@ -260,7 +260,7 @@ nav div.form-container > form > div button:focus {
 
 /* Footer Section */
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   padding: 1.5% 200px;

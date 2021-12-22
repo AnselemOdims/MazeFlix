@@ -20,6 +20,7 @@ Additional description about the project and its features.
   
   ``` bash
   - Webpack(Code Bundlng et al)
+  - Jest(for testing)
   - Git(version control)
   - ESLint(JavaScript linting)
   - WebHint(linting tool)

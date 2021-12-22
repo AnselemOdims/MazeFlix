@@ -12,10 +12,6 @@ function handleClick() {
   });
 }
 
-Helper.displayData('a');
-
-document.querySelector('form').addEventListener('submit', helper.searchHandler);
-
 const icons = new Image();
 icons.src = Icon;
 
@@ -27,9 +23,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   document.querySelector('form').addEventListener('submit', (e) => {
     helper.searchHandler(e, handleClick);
   });
-});
 
-setTimeout(() => {
   const buttons = document.querySelectorAll('.comment-btn');
   buttons.forEach((element) => {
     element.addEventListener('click', (e) => {
@@ -97,4 +91,4 @@ setTimeout(() => {
         });
     });
   });
-}, 1000);
+});

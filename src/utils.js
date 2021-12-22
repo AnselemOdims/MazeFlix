@@ -62,8 +62,19 @@ export default class Utils {
     const likes = await Utils.displayLikes();
     document.querySelectorAll('.likes-num').forEach((item) => {
       const id = likes.find((data) => data.item_id === item.dataset.id);
-      item.innerHTML = id.likes;
+      item.innerHTML = id?.likes ?? 0;
     });
+  }
+
+  /**
+   * @static method
+   * @param {HTML Element} elem - the element
+   * @param {String} type - type of class
+   * @memberof Utils
+   */
+  static addClass(elem, type) {
+    elem.classList.add(type);
+    setTimeout(() => elem.classList.remove(type), 800);
   }
 
   static async displayComments(id) {

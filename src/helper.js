@@ -20,6 +20,11 @@ export default class Helper {
     return result;
   }
 
+  static async getInfo(input) {
+    const result = await Helper.#tvAPI.get(`lookup/shows?${input}`);
+    return result;
+  }
+
   /**
    * @static method - displays the result in the DOM
    * @param {String} input - the search input

@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import Logo from './assets/images/mAZEFLIX.gif';
 
 export const Nav = () => `
@@ -20,6 +21,15 @@ export const Nav = () => `
     </ul>
   </nav>
   `;
+const ids = (args) => {
+  let ans = '';
+  for (const [key, value] of Object.entries(args)) {
+    if (value != null) {
+      ans = `${key}=${value}`;
+    }
+  }
+  return ans;
+};
 
 export const List = ({ show } = {}, likesNum = 0) => `
   <li>
@@ -30,7 +40,7 @@ export const List = ({ show } = {}, likesNum = 0) => `
       <p>${show.name}</p>
       <p><i class="far fa-thumbs-up" id="likes-btn" data-id=${show.id}></i><span  data-id=${show.id} class="likes-num">${likesNum}</span> likes</p>
     </div>
-    <button type="button" class="btn comment-btn" data-id=${show.id}>Comments</button>
+    <button type="button" class="btn comment-btn" data-id=${ids(show.externals)}>Comments</button>
   </li>
 `;
 

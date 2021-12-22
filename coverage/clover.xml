@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1640182553523" clover="3.2.0">
-  <project timestamp="1640182553523" name="All files">
+<coverage generated="1640182628800" clover="3.2.0">
+  <project timestamp="1640182628800" name="All files">
     <metrics statements="39" coveredstatements="6" conditionals="7" coveredconditionals="0" methods="23" coveredmethods="2" elements="69" coveredelements="8" complexity="0" loc="39" ncloc="39" packages="1" files="4" classes="4"/>
     <file name="comment.js" path="/home/anselemcodes/Documents/MazeFlix/src/comment.js">
       <metrics statements="7" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>

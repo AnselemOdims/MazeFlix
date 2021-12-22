@@ -1,4 +1,5 @@
 import Likes from './likes.js';
+import Comments from './comment.js';
 /**
  * @class Utils - the utility class to hold all utiltity functionality
  */
@@ -63,5 +64,10 @@ export default class Utils {
       const id = likes.find((data) => data.item_id === item.dataset.id);
       item.innerHTML = id.likes;
     });
+  }
+
+  static async displayComments(id) {
+    const ans = await Comments.getCommentOne(id);
+    return ans.map((item) => item);
   }
 }

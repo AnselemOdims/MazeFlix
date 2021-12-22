@@ -81,8 +81,8 @@ window.addEventListener('DOMContentLoaded', async () => {
             .then((data) => {
               data.forEach((element) => {
                 const next = document.createElement('div');
-                next.setAttribute('class', 'flex commenting');
-                next.innerHTML = `<p>${element.creation_date} <p>${element.username} : ${element.comment}</p>`;
+                next.setAttribute('class', 'commenting');
+                next.innerHTML = `<p class="date">${element.creation_date}</p><p>${element.username} : ${element.comment}</p>`;
                 space.append(next);
               });
             });
@@ -108,7 +108,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 .then();
               const next = document.createElement('div');
               next.setAttribute('class', 'commenting');
-              next.innerHTML = `<p>03/11/2021</p><p>${name.value}: ${score.value}</p>`;
+              next.innerHTML = `<p class="date">03/11/2021</p><p>${name.value}: ${score.value}</p>`;
               space.append(next);
 
               forms.reset();

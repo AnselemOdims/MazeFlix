@@ -197,6 +197,12 @@ ul.container > li .show-img img {
   margin-bottom: 20px;
 }
 
+ul.container > li .show-img img:hover {
+  transform: scale(1.04, 1.04);
+  cursor: pointer;
+  transition: transform ease-out 1s 0.1s;
+}
+
 ul.container > li button {
   margin: 30px 0 0;
   background: var(--accent-color-1);
@@ -242,17 +248,6 @@ nav div.form-container > form > div button:focus {
   outline: none;
 }
 
-/* spinner */
-.loading-spinner {
-  animation: rotate-forever linear infinite 0.8s;
-  height: 12px;
-  width: 12px;
-  border: 2px solid #fff;
-  border-right-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-}
-
 @keyframes rotate-forever {
   0% {
     transform: rotate(0deg);
@@ -269,19 +264,154 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 1.5% 200px;
-  background-color: var(--accent-color-1);
-  color: var(--neutral-color-1);
+  background-color: var(--accent-color-2);
+  color: var(--secondary-color-3);
   border-radius: 10% 10% 0 0;
   margin-top: 40px;
 }
 
 @media (max-width: 992px) {
-  header > nav {
+  header > nav,
+  main {
     padding: 0 50px;
   }
 
+  nav > ul > li {
+    font-size: 0.8rem;
+    margin: 0 5px 0 10px;
+  }
+
+  .modal {
+    padding: 0;
+  }
+
+  .section {
+    width: 95%;
+  }
+
+  .comment-display {
+    width: 80%;
+  }
+
   nav > .logo img {
-    width: 60%;
-    padding: 20px 0;
+    width: 80%;
+    padding: 10px 0;
+  }
+
+  main > ul.container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  main .heading-container h1 {
+    font-size: 1.6rem;
+  }
+
+  footer {
+    padding: 20px;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  header > nav {
+    padding: 0 10px;
+    flex-direction: column;
+  }
+
+  header > nav > ul {
+    display: none;
+  }
+
+  nav > .logo img {
+    width: 120px;
+    padding: 10px 0;
+  }
+
+  main > ul.container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  nav .form-container {
+    margin: 0;
+  }
+
+  main {
+    padding: 0 30px;
+  }
+
+  main .heading-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .modal {
+    padding: 0;
+  }
+
+  .section {
+    width: 95%;
+    padding: 5px;
+    margin: 10px auto;
+  }
+
+  div.download-btn > button {
+    padding: 10px 5px;
+  }
+
+  .details {
+    margin: 0 0 25px 5px;
+  }
+
+  .details p {
+    font-size: 0.8rem;
+  }
+
+  .details div.genre {
+    padding: 5px 0;
+  }
+
+  .details div.genre > p:nth-of-type(1) {
+    padding-bottom: 5px;
+  }
+
+  .details div.summary > p {
+    padding-right: 5px;
+  }
+
+  .comment-section > h3 {
+    font-size: 1rem;
+    margin: 30px 0 10px;
+  }
+
+  .comment-display {
+    width: 95%;
+  }
+
+  #form {
+    width: 83%;
+  }
+
+  #form > input,
+  #form > textarea {
+    font-size: 0.8rem;
+  }
+
+  .img-section {
+    width: 46%;
+  }
+
+  .details h3 {
+    font-size: 1.2rem;
+  }
+
+  .details div.d-flex {
+    flex-direction: column;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 0.6rem;
   }
 }

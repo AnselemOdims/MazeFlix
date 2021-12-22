@@ -4,8 +4,6 @@ import Comments from './comment.js';
  * @class Utils - the utility class to hold all utiltity functionality
  */
 export default class Utils {
-  static #search = document.querySelector('#search');
-
   /**
    * @function render - handles the rendering of the server response on the DOM
    * @param {Array} data - the array response from the server
@@ -15,13 +13,6 @@ export default class Utils {
       const res = list(result);
       return res;
     }).join('');
-  }
-
-  /**
-   * @function clearFields - handles clearing the input after submit
-   */
-  static clearFields() {
-    Utils.#search.value = '';
   }
 
   /**

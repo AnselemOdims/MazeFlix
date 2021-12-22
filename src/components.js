@@ -45,5 +45,5 @@ export const List = ({ show } = {}, likesNum = 0) => `
 `;
 
 export const Heading = (type, count = 5) => `
-  <h1>Category ${type}: TV Shows(${count})</h1>
+  <h1>Title ${type}: TV Shows(${count})</h1>
 `;

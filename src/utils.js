@@ -66,12 +66,13 @@ export default class Utils {
   }
 
   /**
-   * 
-   * @param {HTML Element} elem - 
-   * @param {*} type 
+   * @static method
+   * @param {HTML Element} elem - the element
+   * @param {String} type - type of class
+   * @memberof Utils
    */
   static addClass(elem, type) {
     elem.classList.add(type);
-    setTimeout(() => elem.classList.remove(type), 500);
+    setTimeout(() => elem.classList.remove(type), 800);
   }
 }

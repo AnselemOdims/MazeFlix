@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             <div class="img-section">
               <img src="${data.image.medium}" alt="" class="main-img">
               <div class="download-btn">
-              <button type="button">Download <img src="${icons.src}" alt="Refresh_icon"></button>
+              <button type="button">Download <i class="fas fa-download"></i></button>
               </div>
             </div>
           <div class="details">

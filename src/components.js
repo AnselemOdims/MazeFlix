@@ -38,7 +38,7 @@ export const List = ({ show } = {}, likesNum = 0) => `
     </div>
     <div class="tv-title">
       <p>${show.name}</p>
-      <p><i class="far fa-thumbs-up" id="likes-btn" data-id=${show.id}></i><span  data-id=${show.id} class="likes-num">${likesNum}</span> likes</p>
+      <p><i class="fas fa-thumbs-up" id="likes-btn" data-id=${show.id}></i><span  data-id=${show.id} class="likes-num">${likesNum}</span> likes</p>
     </div>
     <button type="button" class="btn comment-btn" data-id=${ids(show.externals)}>Comments</button>
   </li>

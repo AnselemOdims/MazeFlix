@@ -24,8 +24,8 @@
   padding: 5px 15px 5px 20px;
   margin: 20px auto;
   color: var(--secondary-color-3);
-  -webkit-animation: scale-up-center 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: scale-up-center 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .d-bold {
@@ -220,7 +220,9 @@ button#adding:focus {
 }
 
 .like-animate {
-  animation: rotate-forever linear 0.8s;
+  -webkit-animation: scale-up-center 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-center 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  color: #f1c215;
 }
 
 /* ----------------------------------------------

@@ -62,7 +62,7 @@ header {
 header > nav {
   display: flex;
   width: 100%;
-  padding: 0 200px;
+  padding: 0 150px;
   justify-content: space-between;
 }
 
@@ -136,7 +136,7 @@ nav ul li a.active {
 
 /* Main Section */
 main {
-  padding: 0 200px;
+  padding: 0 150px;
 }
 
 main .heading-container h1 {
@@ -159,6 +159,8 @@ ul.container > li {
   padding: 10px;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+  -webkit-animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 ul.container > li .tv-title {
@@ -270,6 +272,7 @@ footer {
   background-color: var(--accent-color-1);
   color: var(--neutral-color-1);
   border-radius: 10% 10% 0 0;
+  margin-top: 40px;
 }
 
 @media (max-width: 992px) {

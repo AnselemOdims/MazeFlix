@@ -68,5 +68,6 @@ export default class Helper {
     const elem = target.nextElementSibling;
     await Likes.postLikes(data);
     Likes.updateLikes(data, elem);
+    Utils.addClass(target, 'like-animate');
   }
 }

@@ -64,4 +64,14 @@ export default class Utils {
       item.innerHTML = id?.likes ?? 0;
     });
   }
+
+  /**
+   * 
+   * @param {HTML Element} elem - 
+   * @param {*} type 
+   */
+  static addClass(elem, type) {
+    elem.classList.add(type);
+    setTimeout(() => elem.classList.remove(type), 500);
+  }
 }

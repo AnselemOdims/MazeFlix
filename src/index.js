@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             </div>
             <div class="summary">
               <span>Summary:</span>
-              <p>${data?.summary.slice(0, 200) ?? 'brief'}...</p>
+              <p>${data?.summary?.slice(0, 200) ?? 'brief'}...</p>
             </div>
             <div class="d-flex genre">
               <p>Language: <span class="d-bold">${data.language}</span></p>

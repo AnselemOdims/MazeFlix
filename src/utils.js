@@ -1,4 +1,5 @@
 import Likes from './likes.js';
+import Comments from './comment.js';
 /**
  * @class Utils - the utility class to hold all utiltity functionality
  */
@@ -74,5 +75,10 @@ export default class Utils {
   static addClass(elem, type) {
     elem.classList.add(type);
     setTimeout(() => elem.classList.remove(type), 800);
+  }
+
+  static async displayComments(id) {
+    const ans = await Comments.getCommentOne(id);
+    return ans.map((item) => item);
   }
 }

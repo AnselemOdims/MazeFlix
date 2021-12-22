@@ -3,6 +3,7 @@ import './style.css';
 import { Nav } from './components.js';
 import Helper from './helper.js';
 import Utils from './utils.js';
+import Comments from './comment.js';
 
 const helper = new Helper();
 
@@ -62,8 +63,6 @@ window.addEventListener('DOMContentLoaded', async () => {
         <div class="comment-section">
           <h3>Comments</h3>
           <div class="comment-display">
-            <div class="commenting"><p class="date">03/11/2021</p><p>Alex: I'd Love to buy it as soon as I can</p></div>
-            <div class="commenting"><p class="date">03/12/2021</p><p>Mia: Nice movie</p></div>
           </div>
           <div>
             <h4>Add New Comment</h4>
@@ -76,10 +75,21 @@ window.addEventListener('DOMContentLoaded', async () => {
           </div>
         </div>`;
 
+          const space = document.querySelector('.comment-display');
+
+          Utils.displayComments(args)
+            .then((data) => {
+              data.forEach((element) => {
+                const next = document.createElement('div');
+                next.setAttribute('class', 'flex commenting');
+                next.innerHTML = `<p>${element.creation_date} <p>${element.username} : ${element.comment}</p>`;
+                space.append(next);
+              });
+            });
+
           const span = document.querySelector('.close');
           const forms = document.getElementById('form');
           const add = document.getElementById('adding');
-          const space = document.querySelector('.comment-display');
 
           span.addEventListener('click', () => {
             modal.style.display = 'none';
@@ -94,6 +104,8 @@ window.addEventListener('DOMContentLoaded', async () => {
             const name = document.getElementById('name');
             const score = document.getElementById('comment');
             if ((name.value !== '') && (score.value !== '')) {
+              Comments.postComment(args, name.value, score.value)
+                .then();
               const next = document.createElement('div');
               next.setAttribute('class', 'flex commenting');
               next.innerHTML = `<p>03/11/2021</p><p>${name.value}: ${score.value}</p>`;
@@ -106,3 +118,4 @@ window.addEventListener('DOMContentLoaded', async () => {
     });
   });
 });
+

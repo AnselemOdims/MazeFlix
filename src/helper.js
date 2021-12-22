@@ -21,7 +21,7 @@ export default class Helper {
   }
 
   static async getInfo(input) {
-    const result = await Helper.#tvAPI.get(`lookup/shows?${input}`);
+    const result = await Helper.#tvAPI.get(`shows/${input}`);
     return result;
   }
 
@@ -70,4 +70,9 @@ export default class Helper {
     Likes.updateLikes(data, elem);
     Utils.addClass(target, 'like-animate');
   }
+
+  // static async Comments(id, name, comment){
+
+  //  const ids =
+  // }
 }

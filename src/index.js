@@ -107,7 +107,7 @@ window.addEventListener('DOMContentLoaded', async () => {
               Comments.postComment(args, name.value, score.value)
                 .then();
               const next = document.createElement('div');
-              next.setAttribute('class', 'flex commenting');
+              next.setAttribute('class', 'commenting');
               next.innerHTML = `<p>03/11/2021</p><p>${name.value}: ${score.value}</p>`;
               space.append(next);
 
@@ -118,4 +118,3 @@ window.addEventListener('DOMContentLoaded', async () => {
     });
   });
 });
-

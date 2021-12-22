@@ -21,18 +21,15 @@ describe('Check count number', () => {
 
 describe('Testing the count function for counting the number of comments', () => {
   test('Test if the count is working properly', () => {
-
     // Arrange
     const next = mocking;
 
-     // Act
+    // Act
     const count2 = Utils.getCount(next);
 
-     // Assert
+    // Assert
     expect(next).toHaveLength(count2);
     expect(count2).toBe(7);
     expect(typeof count2).toEqual('number');
   });
 });
-
-

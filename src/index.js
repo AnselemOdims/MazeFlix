@@ -76,10 +76,12 @@ window.addEventListener('DOMContentLoaded', async () => {
         </div>`;
 
           const space = document.querySelector('.comment-display');
+          const title = document.querySelector('.comment-section h3');
 
           Utils.displayComments(args)
             .then((data) => {
               data.forEach((element) => {
+                title.innerHTML = `<h3>Comment(${Utils.getCount(data)})</h3>`
                 const next = document.createElement('div');
                 next.setAttribute('class', 'flex commenting');
                 next.innerHTML = `<p>${element.creation_date} <p>${element.username} : ${element.comment}</p>`;

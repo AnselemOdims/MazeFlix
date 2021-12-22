@@ -3,6 +3,7 @@ import './style.css';
 import { Nav } from './components.js';
 import Helper from './helper.js';
 import Utils from './utils.js';
+import Comments from './comment.js';
 
 const helper = new Helper();
 
@@ -11,10 +12,6 @@ function handleClick() {
     btn.addEventListener('click', Helper.LikeHandler);
   });
 }
-
-Helper.displayData('a');
-
-document.querySelector('form').addEventListener('submit', helper.searchHandler);
 
 const icons = new Image();
 icons.src = Icon;
@@ -27,9 +24,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   document.querySelector('form').addEventListener('submit', (e) => {
     helper.searchHandler(e, handleClick);
   });
-});
 
-setTimeout(() => {
   const buttons = document.querySelectorAll('.comment-btn');
   buttons.forEach((element) => {
     element.addEventListener('click', (e) => {
@@ -58,8 +53,6 @@ setTimeout(() => {
         <div class="comment-section">
           <h2>Comments</h2>
           <div class="comment-display">
-            <div class="flex commenting"><p>03/11/2021</p><p>Alex: I'd Love to buy it as soon as I can</p></div>
-            <div class="flex commenting"><p>03/12/2021</p><p>Mia: Nice movie</p></div>
           </div>
           <form id="form" class="flex direction">
             <input type="text" id="name" placeholder="Your Name">
@@ -68,10 +61,21 @@ setTimeout(() => {
           </form>
         </div>`;
 
+          const space = document.querySelector('.comment-display');
+
+          Utils.displayComments(args)
+            .then((data) => {
+              data.forEach((element) => {
+                const next = document.createElement('div');
+                next.setAttribute('class', 'flex commenting');
+                next.innerHTML = `<p>${element.creation_date} <p>${element.username} : ${element.comment}</p>`;
+                space.append(next);
+              });
+            });
+
           const span = document.querySelector('.close');
           const forms = document.getElementById('form');
           const add = document.getElementById('adding');
-          const space = document.querySelector('.comment-display');
 
           span.addEventListener('click', () => {
             divs.style.display = 'none';
@@ -86,6 +90,8 @@ setTimeout(() => {
             const name = document.getElementById('name');
             const score = document.getElementById('comment');
             if ((name.value !== '') && (score.value !== '')) {
+              Comments.postComment(args, name.value, score.value)
+                .then();
               const next = document.createElement('div');
               next.setAttribute('class', 'flex commenting');
               next.innerHTML = `<p>03/11/2021</p><p>${name.value}: ${score.value}</p>`;
@@ -97,4 +103,4 @@ setTimeout(() => {
         });
     });
   });
-}, 1000);
+});

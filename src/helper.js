@@ -21,7 +21,7 @@ export default class Helper {
   }
 
   static async getInfo(input) {
-    const result = await Helper.#tvAPI.get(`lookup/shows?${input}`);
+    const result = await Helper.#tvAPI.get(`shows/${input}`);
     return result;
   }
 
@@ -69,4 +69,9 @@ export default class Helper {
     await Likes.postLikes(data);
     Likes.updateLikes(data, elem);
   }
+
+  // static async Comments(id, name, comment){
+
+  //  const ids =
+  // }
 }

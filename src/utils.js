@@ -32,7 +32,10 @@ export default class Utils {
    * @memberof Utils
    */
   static getCount(data) {
-    return data.length;
+    if (Array.isArray(data)) {
+      return data.length;
+    }
+    return 0;
   }
 
   /**

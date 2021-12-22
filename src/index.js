@@ -76,17 +76,22 @@ window.addEventListener('DOMContentLoaded', async () => {
         </div>`;
 
           const space = document.querySelector('.comment-display');
+          const title = document.querySelector('.comment-section h3');
+          let count = 0;
+          title.innerHTML = `<h3>Comment(${count})</h3>`;
 
           Utils.displayComments(args)
             .then((data) => {
+              count = Utils.getCount(data);
               data.forEach((element) => {
+                title.innerHTML = `<h3>Comment(${count})</h3>`;
+
                 const next = document.createElement('div');
                 next.setAttribute('class', 'commenting');
                 next.innerHTML = `<p class="date">${element.creation_date}</p><p>${element.username} : ${element.comment}</p>`;
                 space.append(next);
               });
             });
-
           const span = document.querySelector('.close');
           const forms = document.getElementById('form');
           const add = document.getElementById('adding');
@@ -108,7 +113,10 @@ window.addEventListener('DOMContentLoaded', async () => {
                 .then();
               const next = document.createElement('div');
               next.setAttribute('class', 'commenting');
+              count += 1;
+              title.innerHTML = `<h3>Comment(${count})</h3>`;
               next.innerHTML = `<p class="date">03/11/2021</p><p>${name.value}: ${score.value}</p>`;
+
               space.append(next);
 
               forms.reset();

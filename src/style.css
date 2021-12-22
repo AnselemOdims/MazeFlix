@@ -2,6 +2,7 @@
 
 /* Google font import */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('./modal.css');
 
 /* Reset Styles */
 * {
@@ -15,6 +16,7 @@
   --primary-color-1: #f85f68;
   --primary-color-2: #f5303d;
   --primary-color-3: #f7c3c6;
+  --primary-color-4: #ac121a41;
   --accent-color-1: #6eafab;
   --accent-color-2: #b5ebe7;
   --accent-color-3: #567a79;
@@ -22,7 +24,7 @@
   --secondary-color-1: #322831;
   --secondary-color-2: #5f4d5d;
   --secondary-color-3: #2a377f;
-  --secondary-color-4: #1e2344;
+  --secondary-color-4: #262d5a;
   --neutral-color-1: #dfdfde;
   --white: #fff;
   --font-1: 'Lora', sans-serif;
@@ -50,7 +52,6 @@ ul li {
 
 a {
   text-decoration: none;
-  color: #333;
 }
 
 /* Header Styles */

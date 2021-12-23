@@ -70,14 +70,24 @@ export default class Utils {
     setTimeout(() => elem.classList.remove(type), 800);
   }
 
-  
+  /**
+   * @static method
+   * @param {Number} id - the comment id
+   * @returns {Array}
+   * @memberof Utils
+   */
   static async getComments(id) {
     const ans = await Comments.getCommentOne(id);
     return ans.error ? [] : ans.map((item) => item);
   }
 
-  static async display(args) {
-    const data = await Utils.getComments(args);
+  /**
+   * @static method
+   * @param {Number} id - the comment id
+   * @memberof Utils
+   */
+  static async display(id) {
+    const data = await Utils.getComments(id);
     const space = document.querySelector('.comment-display');
     const title = document.querySelector('.comment-section h3');
     const count = Utils.getCount(data);
@@ -85,6 +95,11 @@ export default class Utils {
     space.innerHTML = data.map((item) => Comment(item)).join('');
   }
 
+  /**
+   * @static method
+   * @param {HTMLELement} modal - the modal element
+   * @memberof Utils
+   */
   static handleClose(modal) {
     const span = document.querySelector('.close');
     span.addEventListener('click', () => {
@@ -93,15 +108,20 @@ export default class Utils {
     });
   }
 
-  static handleForm(args) {
+  /**
+   * @static method
+   * @param {Number} id - the comment id
+   * @memberof Utils
+   */
+  static handleForm(id) {
     const forms = document.getElementById('form');
     forms.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('name');
       const comment = document.getElementById('comment');
       if ((name.value !== '') && (comment.value !== '')) {
-        await Comments.postComment(args, name.value, comment.value);
-        Utils.display(args);
+        await Comments.postComment(id, name.value, comment.value);
+        Utils.display(id);
         forms.reset();
       }
     });

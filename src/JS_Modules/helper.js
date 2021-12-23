@@ -20,6 +20,12 @@ export default class Helper {
     return result;
   }
 
+  /**
+   * @static method
+   * @param {String} input - search string
+   * @returns {Object}
+   * @memberof Helper
+   */
   static async getInfo(input) {
     const result = await Helper.#tvAPI.get(`shows/${input}`);
     return result;
@@ -72,6 +78,10 @@ export default class Helper {
     Utils.addClass(target, 'like-animate');
   }
 
+  /**
+   * @static method
+   * @memberof Helper
+   */
   static handleComments() {
     const buttons = document.querySelectorAll('.comment-btn');
     const modal = document.querySelector('.modal');

@@ -6,7 +6,7 @@
 > It is built with HTML, CSS and JavaScript with data from the TvMaze API(tv show data) and the Involvement API(likes and comments)
 
 ## Project Presentation
-[Presentation Link](https://drive.google.com/drive/folders/1F7nq4FhOPCONHq84RJJ6RLaSfYrdU53a)
+[Presentation Link](https://www.veed.io/view/3b918feb-78c4-4b42-b1f4-fe8fb909715b)
 
 ## Mini Demo
 

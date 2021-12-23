@@ -192,7 +192,7 @@ ul.container > li .tv-title p:nth-of-type(2) i:hover {
   color: var(--secondary-color-4);
 }
 
-ul.container > li .show-img img {
+ul.container > li .show-img > img {
   width: 100%;
   margin-bottom: 20px;
 }
@@ -256,6 +256,13 @@ nav div.form-container > form > div button:focus {
   100% {
     transform: rotate(360deg);
   }
+}
+
+img.badge {
+  width: 40px;
+  position: absolute;
+  top: -5px;
+  right: -18px;
 }
 
 /* Footer Section */

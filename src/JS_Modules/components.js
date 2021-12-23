@@ -1,4 +1,5 @@
 import Logo from '../assets/images/mAZEFLIX.gif';
+import Icon from '../assets/images/icon.svg';
 
 export const Nav = () => `
   <nav>
@@ -25,6 +26,9 @@ export const List = ({ show } = {}, likesNum = 0) => `
   <li>
     <div class="show-img">
       <img src=${show.image.medium} alt="show image">
+      <div>
+      <img src=${Icon} class="badge"/>
+      </div>
     </div>
     <div class="tv-title">
       <p>${show.name}</p>

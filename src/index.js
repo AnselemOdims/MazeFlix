@@ -13,9 +13,12 @@ function handleClick() {
   });
 }
 
+const index = Math.floor(Math.random() * 4);
+const items = ['a', 'b', 'c', 'd', 'e'];
+
 window.addEventListener('DOMContentLoaded', async () => {
   document.querySelector('header').innerHTML = Nav();
-  await Helper.displayData('a');
+  await Helper.displayData(items[index]);
   await Utils.populate();
   handleClick();
   document.querySelector('form').addEventListener('submit', (e) => {

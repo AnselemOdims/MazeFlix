@@ -4,13 +4,13 @@ import Icon from '../assets/images/icon.svg';
 export const Nav = () => `
   <nav>
     <div class="logo">
-      <img src=${Logo} alt="site logo" />
+      <a href="#"><img src=${Logo} alt="site logo" /></a>
     </div>
     <div class="form-container">
       <form>
         <input type="search" placeholder="search" id="search"/>
         <div>
-          <button type="submit" id="submit-btn">Search <span class="spinner"></span></button>
+          <button type="submit" id="submit-btn"><i class="fas fa-search"></i> Search</button>
         </div>
       </form>
     </div>
@@ -25,16 +25,16 @@ export const Nav = () => `
 export const List = ({ show } = {}, likesNum = 0) => `
   <li>
     <div class="show-img">
-      <img src=${show.image.medium} alt="show image">
+      <img src=${show?.image?.medium ?? 'https://www.freeiconspng.com/uploads/no-image-icon-23.jpg'} alt="show image">
       <div>
       <img src=${Icon} class="badge"/>
       </div>
     </div>
     <div class="tv-title">
-      <p>${show.name}</p>
-      <p><i class="fas fa-thumbs-up" id="likes-btn" data-id=${show.id}></i><span  data-id=${show.id} class="likes-num">${likesNum}</span> likes</p>
+      <p>${show?.name}</p>
+      <p><i class="fas fa-thumbs-up" id="likes-btn" data-id=${show?.id}></i><span  data-id=${show?.id} class="likes-num">${likesNum}</span> likes</p>
     </div>
-    <button type="button" class="btn comment-btn" data-id=${show.id}>Comments</button>
+    <button type="button" class="btn comment-btn" data-id=${show?.id}>Comments</button>
   </li>
 `;
 
@@ -47,24 +47,24 @@ export const Modal = (data) => `
 <span class="close">&times;</span>
 <div class="top-section">
 <div class="img-section">
-  <img src="${data.image.medium}" alt="" class="main-img">
+  <img src="${data?.image?.medium ?? 'https://www.freeiconspng.com/uploads/no-image-icon-23.jpg'}" alt="" class="main-img">
   <div class="download-btn">
-  <button type="button">Download <i class="fas fa-download"></i></button>
+  <a href=${data?.url} target="_blank" noreferrer noopener>Download <i class="fas fa-download"></i></a>
   </div>
 </div>
 <div class="details">
 <h3>${data.name}</h3>
 <div class="d-flex genre">
   <p>Genre: <span class="d-bold">${data.genres}</span></p>
-  <p>Year: <span class="d-bold">${data.ended ?? 'unknown'}</span></p>
+  <p>Year: <span class="d-bold">${data?.ended ?? 'unknown'}</span></p>
 </div>
 <div class="summary">
   <span>Summary:</span>
-  <p>${data?.summary?.slice(0, 200) ?? 'brief'}...</p>
+  <p>${data?.summary?.slice(0, 200) ?? 'Brief Info'}...</p>
 </div>
 <div class="d-flex genre">
   <p>Language: <span class="d-bold">${data.language}</span></p>
-  <p>Rating: <span class="d-bold">${data.rating.average ?? 'unknown'}</span></p>
+  <p>Rating: <span class="d-bold">${data?.rating?.average ?? 'unknown'}</span></p>
 </div>
 <p>Premeired: <span class="d-bold">${data.premiered}</span></p>
 </div>

@@ -87,7 +87,7 @@ div.download-btn {
   margin-top: 5px;
 }
 
-div.download-btn > button {
+div.download-btn > a {
   border-radius: 2px;
   background: var(--primary-color-1);
   border: none;
@@ -98,16 +98,16 @@ div.download-btn > button {
   font-family: var(--font-2);
 }
 
-div.download-btn > button:focus {
+div.download-btn > a:focus {
   background: var(--accent-color-4);
 }
 
-div.download-btn > button:hover {
+div.download-btn > a:hover {
   background: var(--accent-color-3);
   box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
 }
 
-div.download-btn > button img {
+div.download-btn > a img {
   width: 7%;
 }
 

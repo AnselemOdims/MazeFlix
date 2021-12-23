@@ -116,13 +116,20 @@ export default class Utils {
   static handleForm(id) {
     const forms = document.getElementById('form');
     forms.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name');
-      const comment = document.getElementById('comment');
-      if ((name.value !== '') && (comment.value !== '')) {
-        await Comments.postComment(id, name.value, comment.value);
-        Utils.display(id);
-        forms.reset();
+      try {
+        e.preventDefault();
+        const name = document.getElementById('name');
+        const comment = document.getElementById('comment');
+        if ((name.value !== '') && (comment.value !== '')) {
+          e.target.children[2].innerHTML = '<p>Loading <span class="loading-spinner"></span></p>';
+          await Comments.postComment(id, name.value, comment.value);
+          Utils.display(id);
+          forms.reset();
+        }
+      } catch (err) {
+        throw new Error(err);
+      } finally {
+        e.target.children[2].innerText = 'Submit';
       }
     });
   }

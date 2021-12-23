@@ -56,6 +56,7 @@ $ cd MazeFlix
 ```bash
 $ npm install
 $ npm run start # this will make webpack watching for your changes in code
+$ npm run test #This is to run the tests on the count method
 ```
 
 #### Open page in browser

@@ -5,7 +5,10 @@
 > MazeFlix is an entertainment hub where you can find the latest and your favorite TV shows. You can view the details of the show, like a show or even comment. You can also see other comments which might give you a general idea about what people think about the show.
 > It is built with HTML, CSS and JavaScript with data from the TvMaze API(tv show data) and the Involvement API(likes and comments)
 
-## Mini Presentation
+## Project Presentation
+[Presentation Link](https://drive.google.com/drive/folders/1F7nq4FhOPCONHq84RJJ6RLaSfYrdU53a)
+
+## Mini Demo
 
 ![screenshot](./src/assets/images/maze-flix.gif)
 
@@ -29,7 +32,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://anselemodims.github.io/MazeFlix/)
+[Website Link](https://anselemodims.github.io/MazeFlix/)
 
 
 ## Getting Started
@@ -72,7 +75,6 @@ $ open dist/index.html
     https://api.tvmaze.com/search/shows?q=a
 
   ```
->  This gameID is saved in the localStorage automatically
   
 ## Interaction with the Involvement API
 - Each new query for Involvement API is done using the below as the BASEURL

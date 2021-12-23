@@ -70,9 +70,4 @@ export default class Helper {
     Likes.updateLikes(data, elem);
     Utils.addClass(target, 'like-animate');
   }
-
-  // static async Comments(id, name, comment){
-
-  //  const ids =
-  // }
 }

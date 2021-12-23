@@ -1,20 +1,25 @@
-import './style.css';
-import Avatar from './Avatar.jpg';
-import helper from './helper';
+import './assets/CSS/style.css';
+import { Nav } from './JS_Modules/components.js';
+import Helper from './JS_Modules/helper.js';
+import Utils from './JS_Modules/utils.js';
 
-function component(){
-  let div = document.createElement('div')
-  let element = document.createElement('h1');
-  element.textContent = 'Hello World!, still keeping'
-  div.append(element)
-  let img = document.createElement('img');
-  img.src = Avatar;
-  div.append(img)
-  let btn = document.createElement('button');
-  btn.addEventListener('click', helper)
-  btn.innerHTML = 'Click Me!';
-  div.append(btn)
-  return div
+// Create an instance of the Helper class
+const helper = new Helper();
+
+// function to handle click
+function handleClick() {
+  document.querySelectorAll('#likes-btn').forEach((btn) => {
+    btn.addEventListener('click', Helper.LikeHandler);
+  });
 }
 
-document.querySelector('body').append(component())
+window.addEventListener('DOMContentLoaded', async () => {
+  document.querySelector('header').innerHTML = Nav();
+  await Helper.displayData('a');
+  await Utils.populate();
+  handleClick();
+  document.querySelector('form').addEventListener('submit', (e) => {
+    helper.searchHandler(e, handleClick);
+  });
+  Helper.handleComments();
+});

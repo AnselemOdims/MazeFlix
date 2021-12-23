@@ -5,15 +5,15 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    helper: './src/helper.js',
   },
- devtool: 'inline-source-map',
- devServer: {
-  static: './dist',
-},
+  devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack Boilerplate',
+      title: 'MazeFlix',
+      template: './src/index.html',
     }),
   ],
   output: {

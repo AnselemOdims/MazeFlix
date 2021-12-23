@@ -38,6 +38,7 @@ export default class Helper {
    */
   static async displayData(input) {
     try {
+      document.querySelector('#lists-container').innerHTML = '<span class="loading-spin"></span>';
       const result = await Helper.getHandler(input);
       Utils.renderHeading(input, Heading, Utils.getCount(result));
       await Utils.render(result, List);
@@ -54,13 +55,17 @@ export default class Helper {
   async searchHandler(e, handle) {
     e.preventDefault();
     const value = document.querySelector('#search').value.trim();
+    const search = document.querySelector('.fa-search');
     try {
+      search.classList.add('rotate');
       await Helper.displayData(value);
       handle();
       Helper.handleComments();
       await Utils.populate();
     } catch (err) {
       throw new Error(err);
+    } finally {
+      search.classList.remove('rotate');
     }
   }
 
@@ -87,14 +92,21 @@ export default class Helper {
     const modal = document.querySelector('.modal');
     buttons.forEach((element) => {
       element.addEventListener('click', async (e) => {
-        const args = e.target.getAttribute('data-id');
-        const data = await Helper.getInfo(args);
-        modal.style.display = 'block';
-        modal.innerHTML = Modal(data);
+        try {
+          const args = e.target.getAttribute('data-id');
+          e.target.innerHTML = '<p>Loading <span class="loading-spinner"></span></p>';
+          const data = await Helper.getInfo(args);
+          modal.style.display = 'block';
+          modal.innerHTML = Modal(data);
 
-        Utils.display(args);
-        Utils.handleClose(modal);
-        Utils.handleForm(args);
+          Utils.display(args);
+          Utils.handleClose(modal);
+          Utils.handleForm(args);
+        } catch (err) {
+          throw new Error(err);
+        } finally {
+          e.target.innerText = 'Comments';
+        }
       });
     });
   }

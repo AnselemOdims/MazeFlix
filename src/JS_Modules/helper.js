@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import Utils from './utils.js';
 import FetchWrapper from './fetchWrapper.js';
-import { List, Heading } from './components.js';
+import { List, Heading, Modal } from './components.js';
 import Likes from './likes.js';
 
 /**
@@ -51,6 +51,7 @@ export default class Helper {
     try {
       await Helper.displayData(value);
       handle();
+      Helper.handleComments();
       await Utils.populate();
     } catch (err) {
       throw new Error(err);
@@ -69,5 +70,22 @@ export default class Helper {
     await Likes.postLikes(data);
     Likes.updateLikes(data, elem);
     Utils.addClass(target, 'like-animate');
+  }
+
+  static handleComments() {
+    const buttons = document.querySelectorAll('.comment-btn');
+    const modal = document.querySelector('.modal');
+    buttons.forEach((element) => {
+      element.addEventListener('click', async (e) => {
+        const args = e.target.getAttribute('data-id');
+        const data = await Helper.getInfo(args);
+        modal.style.display = 'block';
+        modal.innerHTML = Modal(data);
+
+        Utils.display(args);
+        Utils.handleClose(modal);
+        Utils.handleForm(args);
+      });
+    });
   }
 }

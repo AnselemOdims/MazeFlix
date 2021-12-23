@@ -7,7 +7,7 @@
 
 ## Mini Presentation
 
-![screenshot](./src/assets/screenshots/tvAPI.png)
+![screenshot](./src/assets/images/maze-flix.gif)
 
 
 Additional description about the project and its features.

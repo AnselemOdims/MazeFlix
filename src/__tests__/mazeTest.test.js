@@ -1,6 +1,6 @@
 import mockData from '../__mocks__/mazeMock.js';
 import mocking from '../__mocks__/commentMock.js';
-import Utils from '../utils.js';
+import Utils from '../JS_Modules/utils.js';
 
 describe('Check count number', () => {
   test('if the function actually does the count', () => {
